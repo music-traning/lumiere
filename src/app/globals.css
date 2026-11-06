@@ -1,0 +1,25 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    background-color: #07080a;
+    color: #e4e2dd;
+  }
+
+  body {
+    background-color: #07080a;
+    color: #d6d3cd;
+    font-feature-settings: "palt";
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+  }
+
+  ::selection {
+    background-color: rgba(197, 168, 105, 0.22);
+    color: #ffffff;
+  }
+}
