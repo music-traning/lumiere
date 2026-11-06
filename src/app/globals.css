@@ -11,7 +11,7 @@
 
   body {
     background-color: #07080a;
-    color: #d6d3cd;
+    color: #e0ddd7;
     font-feature-settings: "palt";
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -19,7 +19,30 @@
   }
 
   ::selection {
-    background-color: rgba(197, 168, 105, 0.22);
+    background-color: rgba(197, 168, 105, 0.25);
     color: #ffffff;
+  }
+}
+
+/* Lightweight GPU-accelerated scroll reveal (replaces heavy JS animation library) */
+.reveal-section {
+  opacity: 0;
+  transform: translate3d(0, 20px, 0);
+  transition:
+    opacity 0.9s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: opacity, transform;
+}
+
+.reveal-section.is-visible {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal-section {
+    opacity: 1;
+    transform: none;
+    transition: none;
   }
 }
